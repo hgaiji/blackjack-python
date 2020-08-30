@@ -7,6 +7,7 @@ class Person:
         #カードを持っている。→cardクラス
         self.deck = Deck()
         self.hands = []
+        self.isDraw = False
     # カードを引く
     def drawCard(self,isOpen):
         print(f'{self.name}はカードをひきます。')
@@ -18,10 +19,12 @@ class Person:
 class Player(Person):
     def __init__(self, name):
         super(Player,self).__init__(name)
+        print(f'{"="*20}プレイヤーがカードを二枚引きます。{"="*20}')
         for i in [True, True]:
             self.drawCard(i)
 class Dealer(Person):
     def __init__(self, name):
         super(Dealer,self).__init__(name)
+        print(f'{"="*20}ディーラーがカードを二枚引きます。{"="*20}')
         for i in [True,False]:
             self.drawCard(i)

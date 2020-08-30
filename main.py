@@ -1,5 +1,5 @@
 
-from person import Dealer,Player
+from blackjackMaster import *
 def main():
 
     print(f'ゲームを開始します。')
@@ -7,7 +7,10 @@ def main():
     # プレイヤークラス→人クラスを継承したもの
     # 人クラスはカードクラスを持っている
     # ディーラークラス→人クラスを継承したもの
-    player = Player('player')
-    dealer = Dealer('dealer')
+    game = blackJackMaster()
+    while(game.isPlaying()):
+        print(f'{"*" * 20}playing{"*" * 20}')
+    game.battle()
+    print(f'ゲームを終了します。')
 if __name__ == "__main__":
     main()
